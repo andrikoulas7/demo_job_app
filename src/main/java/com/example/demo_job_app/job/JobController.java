@@ -1,6 +1,8 @@
 package com.example.demo_job_app.job;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.awt.*;
@@ -18,4 +20,9 @@ public class JobController {
         return jobs;
     }
 
+    @PostMapping("/jobs")
+    public String createJob(@RequestBody Job job) {
+        jobs.add(job);
+        return "Job added successfully";
+    }
 }
