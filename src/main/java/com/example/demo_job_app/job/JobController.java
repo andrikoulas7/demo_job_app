@@ -13,7 +13,6 @@ import java.util.List;
 @RestController
 public class JobController {
 
-    private List<Job> jobs = new ArrayList<>();
 
     @GetMapping("/jobs")
     public List<Job> findAll() {
