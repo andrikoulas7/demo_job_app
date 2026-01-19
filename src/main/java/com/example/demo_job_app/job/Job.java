@@ -1,7 +1,7 @@
 package com.example.demo_job_app.job;
 
 public class Job {
-    private long id;
+    private Long id;
     private String title;
     private String description;
     private String minSalary;
@@ -17,7 +17,7 @@ public class Job {
         this.location = location;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
