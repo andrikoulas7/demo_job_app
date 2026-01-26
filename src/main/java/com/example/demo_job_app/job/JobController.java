@@ -27,7 +27,7 @@ public class JobController {
     public ResponseEntity<String> createJob(@RequestBody Job job) {
         jobService.createJob(job);
 //        return new ResponseEntity<>("Job created successfully",  HttpStatus.CREATED);
-        return new ResponseEntity<>("Job created successfully", HttpStatus.OK);
+        return new ResponseEntity<>("Job created successfully", HttpStatus.CREATED);
     }
 
     @GetMapping("/jobs/{id}")
