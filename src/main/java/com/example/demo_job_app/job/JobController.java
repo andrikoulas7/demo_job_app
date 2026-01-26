@@ -1,5 +1,7 @@
 package com.example.demo_job_app.job;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.awt.*;
@@ -28,10 +30,11 @@ public class JobController {
     }
 
     @GetMapping("/jobs/{id}")
-    public Job getJobById(@PathVariable Long id) {
+    public ResponseEntity<Job> getJobById(@PathVariable Long id) {
+
         Job job = jobService.getJobById(id);
         if (job != null)
-            return job;
-        return new Job(1L, "TestJob", "TestJob", "2000", "2000", "TestLocation");
+            return new ResponseEntity<>(job, HttpStatus.OK);
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 }
